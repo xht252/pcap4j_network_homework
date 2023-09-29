@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 public class SendTCP
 {
     private static final String COUNT_KEY = SendIp.class.getName() + ".count";
-    private static final int COUNT = Integer.getInteger(COUNT_KEY, 4);
+    private static final int COUNT = Integer.getInteger(COUNT_KEY, 2);
 
     private static final String READ_TIMEOUT_KEY = SendIp.class.getName() + ".readTimeout";
     private static final int READ_TIMEOUT = Integer.getInteger(READ_TIMEOUT_KEY, 10); // [ms]

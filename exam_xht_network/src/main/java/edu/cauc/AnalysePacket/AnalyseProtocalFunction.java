@@ -167,5 +167,6 @@ public class AnalyseProtocalFunction
         normalIpv4(ipv4);
         if(ipv4.getHeader().getProtocol() == IpNumber.TCP) normalTCP(packet);
         else if(ipv4.getHeader().getProtocol() == IpNumber.UDP) normalUDP(packet);
+        else System.out.println("Unknown");
     }
 }
