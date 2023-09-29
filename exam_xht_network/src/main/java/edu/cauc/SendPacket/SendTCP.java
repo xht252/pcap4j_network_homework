@@ -134,8 +134,11 @@ public class SendTCP
                     .syn(false)
                     // 终止连接
                     .fin(false)
+                    // 重置
                     .rst(false)
+                    // 数据报长度 5 * 4 = 20
                     .dataOffset((byte) 5)
+                    // 紧急指针
                     .urgentPointer((short) 0);
 
             ipv4Builder

@@ -88,17 +88,17 @@ public class Analyse
                      * ARPAnalyse 解析ARP
                      * IpAnalyse 解析Ip
                      */
-                    EthernetPacket ep = AnalyseProtocalFunction.MacAnalyse(Packet);
-                    boolean flag = AnalyseProtocalFunction.UserDefinedAnalyse(Packet , ep);
+                    EthernetPacket ep = AnalyseProtocolFunction.MacAnalyse(Packet);
+                    boolean flag = AnalyseProtocolFunction.UserDefinedAnalyse(Packet , ep);
                     int idx = check(ep);
                     if(idx == 1 && !flag) // ipv4
                     {
-                        AnalyseProtocalFunction.IpAnalyse(Packet , ep);
+                        AnalyseProtocolFunction.IpAnalyse(Packet , ep);
                         System.out.println(sb);
                     }
                     else if(idx == 2 && !flag) // Arp
                     {
-                        AnalyseProtocalFunction.ARPAnalyse(Packet , ep);
+                        AnalyseProtocolFunction.ARPAnalyse(Packet , ep);
                         System.out.println(sb);
                     }
                 } catch (IllegalRawDataException e) {
