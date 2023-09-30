@@ -69,7 +69,6 @@ public class AnalyseProtocolFunction
 
         for(int i = hex.size() - 1;i >= 0;i --)
             res.append(hex.get(i));
-        System.out.println(res);
         return res.toString();
     }
 

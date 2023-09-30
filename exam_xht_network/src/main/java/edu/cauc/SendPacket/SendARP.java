@@ -30,7 +30,6 @@ public class SendARP
     private static final String SNAPLEN_KEY = SendARP.class.getName() + ".snaplen";
     private static final int SNAPLEN = Integer.getInteger(SNAPLEN_KEY, 65536); // [bytes]
 
-    private static final MacAddress SRC_MAC_ADDR = MacAddress.getByName("94-E7-0B-29-71-1F");
 
     public static void main(String[] args) throws PcapNativeException, NotOpenException, UnknownHostException {
         // 输出一些信息

@@ -136,7 +136,7 @@ public class SendTCP
                     .fin(false)
                     // 重置
                     .rst(false)
-                    // 数据报长度 5 * 4 = 20
+                    // 数据报长度 5 * 4 = 20 注意必须得有
                     .dataOffset((byte) 5)
                     // 紧急指针
                     .urgentPointer((short) 0);

@@ -90,10 +90,11 @@ public class SendUserDefined
 
         Scanner sc = new Scanner(System.in);
         System.out.println("------自定义输入------");
-        System.out.println("目的mac地址：");
-        MacAddress DST_MAC_ADDR = MacAddress.getByName(sc.nextLine());
+
         System.out.println("源mac地址：");
         MacAddress SRC_MAC_ADDR = MacAddress.getByName(sc.nextLine());
+        System.out.println("目的mac地址：");
+        MacAddress DST_MAC_ADDR = MacAddress.getByName(sc.nextLine());
         String s = null;
         int user_type = 0;
         while (true)
@@ -115,7 +116,6 @@ public class SendUserDefined
         }
         System.out.println("请输入名字首字母：");
         String name = trans_ascii(sc.nextLine());
-        System.out.println(name);
         System.out.println("请输入学号（类似210340170）：");
         int id = Integer.parseInt(sc.nextLine());
         System.out.println("请输入小时数：");

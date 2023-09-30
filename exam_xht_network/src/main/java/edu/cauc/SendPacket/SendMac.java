@@ -84,11 +84,11 @@ public class SendMac
             // 核心代码构建操作帧
             EthernetPacket.Builder etherBuilder = new EthernetPacket.Builder();
             Scanner sc = new Scanner(System.in);
-            System.out.println("请输入目的mac地址：");
-            MacAddress DST_MAC_ADDR = MacAddress.getByName(sc.nextLine());
-
             System.out.println("请输入源mac地址：");
             MacAddress SRC_MAC_ADDR = MacAddress.getByName(sc.nextLine());
+
+            System.out.println("请输入目的mac地址：");
+            MacAddress DST_MAC_ADDR = MacAddress.getByName(sc.nextLine());
             // 自定义输入信息
             String payload = null;
             System.out.println("请输入带输入的数据：");

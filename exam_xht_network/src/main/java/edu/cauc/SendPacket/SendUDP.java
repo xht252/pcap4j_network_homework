@@ -91,8 +91,6 @@ public class SendUDP
         System.out.println("请输入长度：");
         int len = Integer.parseInt(sc.nextLine());
 
-        System.out.println("请输入需要打包的内容：");
-        String payload = sc.nextLine();
 
         // 混杂模式的网卡头部
         PcapHandle handle = nif.openLive(SNAPLEN, PcapNetworkInterface.PromiscuousMode.PROMISCUOUS, READ_TIMEOUT);
@@ -106,8 +104,7 @@ public class SendUDP
                 .dstAddr(InetAddress.getByName(DisIp))
                 .srcPort(sp)
                 .dstPort(dp)
-                .length((short)len)
-                .payloadBuilder(new UnknownPacket.Builder().rawData((payload).getBytes()));
+                .length((short)len);
 
         try {
             handle.setFilter(

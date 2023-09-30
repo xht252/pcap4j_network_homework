@@ -27,19 +27,6 @@ public class SendIp
 
     public static final IpNumber XHT = new IpNumber((byte)-20, "XHT");
 
-
-    private static byte[] get_ipv4(String s)
-    {
-        byte[] res = new byte[4];
-        String[] s1 = s.split("\\.");
-        for (int i = 0; i < s1.length ; i++)
-        {
-            int x = Integer.parseInt(s1[i]);
-            res[i] = (byte) x;
-        }
-        return res;
-    }
-
     public static void main(String[] args) throws PcapNativeException, NotOpenException {
 
 //        System.out.println(Arrays.toString(SrcIp));
@@ -78,9 +65,6 @@ public class SendIp
         MacAddress dst_mac = MacAddress.getByName(sc.nextLine());
 
 
-        System.out.println("请输入需要打包的内容：");
-        String payload = sc.nextLine();
-
         // 混杂模式的网卡头部
         PcapHandle handle = nif.openLive(SNAPLEN, PcapNetworkInterface.PromiscuousMode.PROMISCUOUS, READ_TIMEOUT);
         PcapHandle sendHandle = nif.openLive(SNAPLEN, PcapNetworkInterface.PromiscuousMode.PROMISCUOUS, READ_TIMEOUT);
@@ -97,7 +81,6 @@ public class SendIp
                         .srcAddr((Inet4Address) Inet4Address.getByName(SrcIp))
                         .dstAddr((Inet4Address) Inet4Address.getByName(DisIp))
                         .totalLength((short) 100)
-                        .payloadBuilder(new UnknownPacket.Builder().rawData((payload).getBytes()))
                         .dontFragmentFlag(true)
                         .correctLengthAtBuild(true)
                         .correctChecksumAtBuild(true);
